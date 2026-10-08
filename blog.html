@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ブログ | 情報ノート</title>
+<meta name="description" content="情報の勉強の進捗を、日付と日記でつづるブログ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --turq:#40e0d0;
+  --turq-soft:#d9f8f4;
+  --ink:#12303a;
+  --ink-sub:#4a6770;
+  --paper:#f7fdfc;
+  --grid:#cdeeea;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-padding-top:70px}
+body{
+  font-family:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+  color:var(--ink);
+  line-height:1.85;
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+h1,h2,h3{font-family:"Shippori Mincho","Yu Mincho",serif;line-height:1.4}
+
+header{position:sticky;top:0;z-index:10;background:var(--turq);border-bottom:3px solid var(--ink)}
+.bar{max-width:1020px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{font-family:"Shippori Mincho",serif;font-weight:800;font-size:1.3rem;text-decoration:none;letter-spacing:.06em}
+nav ul{list-style:none;display:flex;gap:4px}
+nav a{display:block;padding:6px 14px;text-decoration:none;font-weight:500;border-radius:4px}
+nav a:hover{background:rgba(255,255,255,.5)}
+nav a[aria-current="page"]{background:var(--ink);color:var(--turq)}
+
+main{max-width:1020px;margin:0 auto;padding:0 20px}
+
+.page-head{padding:52px 0 24px}
+.page-head h1{
+  font-size:clamp(1.9rem,4.5vw,2.6rem);font-weight:800;letter-spacing:.04em;
+  display:inline-block;border-bottom:6px solid var(--turq);padding-bottom:2px;
+}
+.page-head p{margin-top:14px;color:var(--ink-sub);max-width:34em}
+
+.layout{display:grid;grid-template-columns:minmax(0,680px) 260px;gap:32px;align-items:start;padding-bottom:8px}
+
+.feed{display:grid;gap:12px}
+.post{
+  display:grid;grid-template-columns:44px 1fr;gap:12px;
+  background:#fff;border:2px solid var(--ink);border-radius:6px;padding:14px 16px;
+}
+.avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--turq);border:2px solid var(--ink);
+  display:grid;place-items:center;font-family:"Shippori Mincho",serif;font-weight:800;
+}
+.post time{font-size:.82rem;color:var(--ink-sub);font-weight:500}
+.post p{margin-top:2px}
+
+.month{
+  font-family:"Shippori Mincho",serif;font-weight:800;font-size:1.1rem;
+  margin:14px 0 2px;padding-left:10px;border-left:8px solid var(--turq);
+}
+.month:first-child{margin-top:0}
+
+aside.side{
+  position:sticky;top:76px;
+  background:#fff;border:2px solid var(--ink);border-radius:6px;
+  box-shadow:6px 6px 0 var(--turq);padding:18px 20px;
+}
+aside.side h2{font-size:1.05rem;margin-bottom:8px}
+aside.side ul{list-style:none;font-size:.92rem}
+aside.side li{display:flex;justify-content:space-between;gap:8px;padding:4px 0;border-bottom:1px dashed var(--ink-sub)}
+aside.side li:last-child{border-bottom:0}
+aside.side .tag{font-size:.75rem;font-weight:700;padding:0 8px;border-radius:99px;border:2px solid var(--ink);white-space:nowrap}
+.tag.done{background:var(--turq)}
+.tag.now{background:var(--turq-soft)}
+.tag.next{background:#fff;border-style:dashed}
+
+footer{margin-top:64px;background:var(--turq);border-top:3px solid var(--ink);text-align:center;padding:22px 20px;font-size:.88rem}
+footer ul{list-style:none;display:flex;gap:18px;justify-content:center;margin-bottom:8px;flex-wrap:wrap}
+
+@media (max-width:820px){
+  .layout{grid-template-columns:1fr}
+  aside.side{position:static;order:-1}
+  .bar{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="index.html">情報ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html" aria-current="page">ブログ</a></li>
+        <li><a href="column.html">コラム</a></li>
+        <li><a href="about.html">について</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="page-head">
+    <h1>ブログ</h1>
+    <p>勉強の進捗を、日付と日記だけで短くつづっています。新しい記録が上に並びます。</p>
+  </div>
+
+  <div class="layout">
+
+    <div class="feed">
+      <h2 class="month">2026年10月</h2>
+
+      <article class="post">
+        <div class="avatar" aria-hidden="true">情</div>
+        <div><time datetime="2026-10-08">2026/10/08</time><p>2進数と16進数の変換を練習。4桁ずつ区切ると16進数になるのを覚えたら、一気に楽になった。</p></div>
+      </article>
+      <article class="post">
+        <div class="avatar" aria-hidden="true">情</div>
+        <div><time datetime="2026-10-07">2026/10/07</time><p>探索のアルゴリズム。二分探索は、データが並んでいないと使えない。ここを忘れがちなので要注意。</p></div>
+      </article>
+      <article class="post">
+        <div class="avatar" aria-hidden="true">情</div>
+        <div><time datetime="2026-10-05">2026/10/05</time><p>セキュリティの用語を整理。共通鍵と公開鍵の違いを図に描いて覚えた。</p></div>
+      </article>
+      <article class="post">
+        <div class="avatar" aria-hidden="true">情</div>
+        <div><time datetime="2026-10-04">2026/10/04</time><p>今日は復習の日。昨日までのノートを読み返して、あいまいだった用語に印をつけた。</p></div>
+      </article>
+      <article class="post">
+        <div class="avatar" aria-hidden="true">情</div>
+        <div><time datetime="2026-10-02">2026/10/02</time><p>整列のアルゴリズム（バブルソート）を、紙に書いて手で動かしてみた。動きが見えると分かりやすい。</p></div>
+      </article>
+      <article class="post">
+        <div class="avatar" aria-hidden="true">情</div>
+        <div><time datetime="2026-10-01">2026/10/01</time><p>10月になったので勉強の計画を立て直した。まずアルゴリズムとセキュリティ、そのあとネットワークへ進む。</p></div>
+      </article>
+
+      <h2 class="month">2026年9月</h2>
+
+      <article class="post">
+        <div class="avatar" aria-hidden="true">情</div>
+        <div><time datetime="2026-09-28">2026/09/28</time><p>ビットとバイトの関係を整理。8ビットで1バイト、これで256通りを表せる。</p></div>
+      </article>
+      <article class="post">
+        <div class="avatar" aria-hidden="true">情</div>
+        <div><time datetime="2026-09-25">2026/09/25</time><p>2進数の足し算に挑戦。繰り上がりは10進数と同じ考え方なので、慣れればだいぶ速い。</p></div>
+      </article>
+      <article class="post">
+        <div class="avatar" aria-hidden="true">情</div>
+        <div><time datetime="2026-09-21">2026/09/21</time><p>2進数に入門。10進数を2で割り続けて、余りを逆から並べると2進数になる。</p></div>
+      </article>
+      <article class="post">
+        <div class="avatar" aria-hidden="true">情</div>
+        <div><time datetime="2026-09-18">2026/09/18</time><p>情報の勉強サイトを作り始めた。ノートを見返すのと同じ感覚で、ここに記録していく。</p></div>
+      </article>
+    </div>
+
+    <aside class="side" aria-labelledby="side-title">
+      <h2 id="side-title">勉強の進み具合</h2>
+      <ul>
+        <li>2進数と16進数<span class="tag done">できた</span></li>
+        <li>アルゴリズム<span class="tag now">勉強中</span></li>
+        <li>情報セキュリティ<span class="tag now">勉強中</span></li>
+        <li>ネットワーク<span class="tag next">これから</span></li>
+        <li>データベース<span class="tag next">これから</span></li>
+        <li>プログラミング<span class="tag next">これから</span></li>
+      </ul>
+    </aside>
+
+  </div>
+
+</main>
+
+<footer>
+  <ul>
+    <li><a href="index.html">ホーム</a></li>
+    <li><a href="blog.html">ブログ</a></li>
+    <li><a href="column.html">コラム</a></li>
+    <li><a href="about.html">について</a></li>
+  </ul>
+  <small>&copy; 2026 情報ノート</small>
+</footer>
+
+</body>
+</html>
