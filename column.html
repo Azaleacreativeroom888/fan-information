@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コラム | 情報ノート</title>
+<meta name="description" content="情報に関する4コマ漫画、イラスト、小論文形式の軽い記事をまとめたコラムページ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --turq:#40e0d0;
+  --turq-soft:#d9f8f4;
+  --ink:#12303a;
+  --ink-sub:#4a6770;
+  --paper:#f7fdfc;
+  --grid:#cdeeea;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-padding-top:70px}
+body{
+  font-family:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+  color:var(--ink);
+  line-height:1.85;
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+h1,h2,h3{font-family:"Shippori Mincho","Yu Mincho",serif;line-height:1.4}
+
+header{position:sticky;top:0;z-index:10;background:var(--turq);border-bottom:3px solid var(--ink)}
+.bar{max-width:1020px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{font-family:"Shippori Mincho",serif;font-weight:800;font-size:1.3rem;text-decoration:none;letter-spacing:.06em}
+nav ul{list-style:none;display:flex;gap:4px}
+nav a{display:block;padding:6px 14px;text-decoration:none;font-weight:500;border-radius:4px}
+nav a:hover{background:rgba(255,255,255,.5)}
+nav a[aria-current="page"]{background:var(--ink);color:var(--turq)}
+
+main{max-width:1020px;margin:0 auto;padding:0 20px}
+.page-head{padding:52px 0 16px}
+.page-head h1{
+  font-size:clamp(1.9rem,4.5vw,2.6rem);font-weight:800;letter-spacing:.04em;
+  display:inline-block;border-bottom:6px solid var(--turq);padding-bottom:2px;
+}
+.page-head p{margin-top:14px;color:var(--ink-sub);max-width:34em}
+
+.jump{list-style:none;display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 0}
+.jump a{
+  display:block;padding:4px 16px;font-weight:700;text-decoration:none;
+  background:#fff;border:2px solid var(--ink);border-radius:99px;
+}
+.jump a:hover{background:var(--turq)}
+
+section{padding:44px 0 4px}
+.sec-title{
+  font-size:1.5rem;font-weight:800;display:inline-block;
+  border-bottom:6px solid var(--turq);padding-bottom:2px;margin-bottom:8px;
+}
+.lead{color:var(--ink-sub);margin-bottom:20px;font-size:.95rem}
+
+/* placeholder for images */
+.ph{
+  display:grid;place-items:center;text-align:center;
+  background:var(--turq-soft);color:var(--ink-sub);
+  font-size:.85rem;line-height:1.5;padding:8px;
+}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* 4koma: read top to bottom */
+.komas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,300px));gap:28px;justify-content:start}
+.koma{background:#fff;border:2px solid var(--ink);border-radius:6px;box-shadow:6px 6px 0 var(--turq);padding:16px}
+.koma h3{font-size:1.1rem;margin-bottom:10px}
+.koma ol{list-style:none;display:grid;gap:8px}
+.koma li{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:stretch}
+.koma .n{
+  display:grid;place-items:center;background:var(--turq);
+  border:2px solid var(--ink);font-weight:700;border-radius:4px;
+}
+.koma li .ph{border:2px solid var(--ink);min-height:92px}
+.koma p.date{margin-top:10px;font-size:.82rem;color:var(--ink-sub)}
+
+/* illustrations */
+.illust{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.illust figure{background:#fff;border:2px solid var(--ink);border-radius:6px;overflow:hidden}
+.illust figure .ph{aspect-ratio:1/1;border-bottom:2px solid var(--ink)}
+.illust figcaption{padding:8px 12px 10px;font-size:.9rem;font-weight:500}
+.illust figcaption small{display:block;color:var(--ink-sub);font-weight:400}
+
+/* essays */
+.essay{
+  background:#fff;border:2px solid var(--ink);border-radius:6px;
+  padding:22px 26px;max-width:720px;margin-bottom:18px;
+}
+.essay .meta{display:flex;gap:10px;align-items:center;font-size:.82rem;color:var(--ink-sub)}
+.kind{font-size:.76rem;font-weight:700;color:var(--ink);background:var(--turq);padding:0 10px;border-radius:99px;border:2px solid var(--ink)}
+.essay h3{font-size:1.3rem;margin:6px 0 10px}
+.essay h4{
+  font-family:"Shippori Mincho",serif;font-size:1rem;margin:14px 0 2px;
+  padding-left:8px;border-left:6px solid var(--turq);
+}
+.essay p{margin-top:4px}
+
+footer{margin-top:64px;background:var(--turq);border-top:3px solid var(--ink);text-align:center;padding:22px 20px;font-size:.88rem}
+footer ul{list-style:none;display:flex;gap:18px;justify-content:center;margin-bottom:8px;flex-wrap:wrap}
+
+@media (max-width:760px){.bar{justify-content:center}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="index.html">情報ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="column.html" aria-current="page">コラム</a></li>
+        <li><a href="about.html">について</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="page-head">
+    <h1>コラム</h1>
+    <p>情報に関する4コマ漫画やイラスト、そして小論文のスタイルで書いた軽い記事を置いています。</p>
+    <ul class="jump">
+      <li><a href="#yonkoma">4コマ</a></li>
+      <li><a href="#illust">イラスト</a></li>
+      <li><a href="#essay">小論文</a></li>
+    </ul>
+  </div>
+
+  <!-- 4コマ -->
+  <section id="yonkoma" aria-labelledby="h-yonkoma">
+    <h2 class="sec-title" id="h-yonkoma">4コマ漫画</h2>
+    <p class="lead">上から下へ読んでね。</p>
+    <div class="komas">
+
+      <article class="koma">
+        <h3>バグの正体</h3>
+        <ol>
+          <li><span class="n">1</span><div class="ph">1コマ目の画像<br>（&lt;img&gt;に差し替え）</div></li>
+          <li><span class="n">2</span><div class="ph">2コマ目の画像</div></li>
+          <li><span class="n">3</span><div class="ph">3コマ目の画像</div></li>
+          <li><span class="n">4</span><div class="ph">4コマ目の画像</div></li>
+        </ol>
+        <p class="date">2026/10/08</p>
+      </article>
+
+      <article class="koma">
+        <h3>2進数の指折り</h3>
+        <ol>
+          <li><span class="n">1</span><div class="ph">1コマ目の画像</div></li>
+          <li><span class="n">2</span><div class="ph">2コマ目の画像</div></li>
+          <li><span class="n">3</span><div class="ph">3コマ目の画像</div></li>
+          <li><span class="n">4</span><div class="ph">4コマ目の画像</div></li>
+        </ol>
+        <p class="date">2026/10/02</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- イラスト -->
+  <section id="illust" aria-labelledby="h-illust">
+    <h2 class="sec-title" id="h-illust">イラスト</h2>
+    <p class="lead">難しい用語を、絵にして覚えるためのメモ。</p>
+    <div class="illust">
+      <figure><div class="ph">イラスト</div><figcaption>ビットとバイト<small>2026/10/06</small></figcaption></figure>
+      <figure><div class="ph">イラスト</div><figcaption>二分探索<small>2026/10/04</small></figcaption></figure>
+      <figure><div class="ph">イラスト</div><figcaption>共通鍵と公開鍵<small>2026/10/03</small></figcaption></figure>
+      <figure><div class="ph">イラスト</div><figcaption>ネットワークのしくみ<small>2026/09/30</small></figcaption></figure>
+    </div>
+  </section>
+
+  <!-- 小論文 -->
+  <section id="essay" aria-labelledby="h-essay">
+    <h2 class="sec-title" id="h-essay">小論文</h2>
+    <p class="lead">学んだことについて、小論文の形で短くまとめた記事です。</p>
+
+    <article class="essay">
+      <div class="meta"><span class="kind">小論文</span><time datetime="2026-10-07">2026/10/07</time></div>
+      <h3>パスワードは、なぜ長いほうがいいのか</h3>
+      <h4>はじめに</h4>
+      <p>ウェブサービスを使うたびに「パスワードは長めに」と言われる。なぜ長さが大事なのかを、情報の勉強をふまえて考えてみる。</p>
+      <h4>本論</h4>
+      <p>パスワードを破る方法の一つに、すべての組み合わせを順番に試す方法がある。使える文字が62種類（英大文字・小文字・数字）なら、1文字増えるごとに、試す組み合わせは62倍になる。4文字なら約1500万通りだが、8文字なら約218兆通りで、桁がまるで違う。</p>
+      <h4>おわりに</h4>
+      <p>長さを増やすことは、単純だがとても強い対策だと分かった。覚えやすさとのバランスを考えて、短い単語を何個か組み合わせる方法を試してみたい。</p>
+    </article>
+
+    <article class="essay">
+      <div class="meta"><span class="kind">小論文</span><time datetime="2026-09-29">2026/09/29</time></div>
+      <h3>AIと著作権について考える</h3>
+      <h4>はじめに</h4>
+      <p>文章や絵を作れるAIが広まり、「誰の作品なのか」という問いが身近になった。この記事では、学習の過程で気づいた論点を整理する。</p>
+      <h4>本論</h4>
+      <p>ここに本文を書きます。論点を一つに絞って、自分の考えと理由を書くと、短くてもまとまった文章になります。</p>
+      <h4>おわりに</h4>
+      <p>ここに結論を書きます。</p>
+    </article>
+  </section>
+
+</main>
+
+<footer>
+  <ul>
+    <li><a href="index.html">ホーム</a></li>
+    <li><a href="blog.html">ブログ</a></li>
+    <li><a href="column.html">コラム</a></li>
+    <li><a href="about.html">について</a></li>
+  </ul>
+  <small>&copy; 2026 情報ノート</small>
+</footer>
+
+</body>
+</html>
