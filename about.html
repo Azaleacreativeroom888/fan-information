@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>について | 情報ノート</title>
+<meta name="description" content="情報ノートについて、管理人のリンク、お問い合わせフォーム。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --turq:#40e0d0;
+  --turq-soft:#d9f8f4;
+  --ink:#12303a;
+  --ink-sub:#4a6770;
+  --paper:#f7fdfc;
+  --grid:#cdeeea;
+  --err:#b3263e;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-padding-top:70px}
+body{
+  font-family:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+  color:var(--ink);
+  line-height:1.85;
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+h1,h2,h3{font-family:"Shippori Mincho","Yu Mincho",serif;line-height:1.4}
+
+header{position:sticky;top:0;z-index:10;background:var(--turq);border-bottom:3px solid var(--ink)}
+.bar{max-width:1020px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{font-family:"Shippori Mincho",serif;font-weight:800;font-size:1.3rem;text-decoration:none;letter-spacing:.06em}
+nav ul{list-style:none;display:flex;gap:4px}
+nav a{display:block;padding:6px 14px;text-decoration:none;font-weight:500;border-radius:4px}
+nav a:hover{background:rgba(255,255,255,.5)}
+nav a[aria-current="page"]{background:var(--ink);color:var(--turq)}
+
+main{max-width:1020px;margin:0 auto;padding:0 20px}
+.page-head{padding:52px 0 8px}
+.page-head h1{
+  font-size:clamp(1.9rem,4.5vw,2.6rem);font-weight:800;letter-spacing:.04em;
+  display:inline-block;border-bottom:6px solid var(--turq);padding-bottom:2px;
+}
+.page-head p{margin-top:14px;color:var(--ink-sub);max-width:34em}
+
+section{padding:44px 0 4px}
+.sec-title{
+  font-size:1.5rem;font-weight:800;display:inline-block;
+  border-bottom:6px solid var(--turq);padding-bottom:2px;margin-bottom:18px;
+}
+.group{
+  font-family:"Shippori Mincho",serif;font-weight:800;font-size:1.05rem;
+  margin:22px 0 10px;padding-left:10px;border-left:8px solid var(--turq);
+}
+
+/* about box */
+.box{
+  background:#fff;border:2px solid var(--ink);border-radius:6px;
+  box-shadow:6px 6px 0 var(--turq);padding:22px 26px;max-width:720px;
+}
+.box p+p{margin-top:8px}
+.box dl{display:grid;grid-template-columns:7em 1fr;gap:6px 12px;margin-top:14px;padding-top:14px;border-top:2px dashed var(--ink-sub)}
+.box dt{font-weight:700}
+
+/* links */
+.links{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.links a{
+  display:flex;align-items:center;gap:14px;text-decoration:none;
+  background:#fff;border:2px solid var(--ink);border-radius:6px;padding:12px 16px;
+  transition:background .15s;
+}
+.links a:hover{background:var(--turq-soft)}
+.links .ico{
+  flex:none;width:44px;height:44px;display:grid;place-items:center;font-size:1.4rem;
+  background:var(--turq);border:2px solid var(--ink);border-radius:4px;
+}
+.links .txt{flex:1;min-width:0}
+.links b{display:block;font-size:1rem;line-height:1.5}
+.links small{display:block;color:var(--ink-sub);font-size:.82rem;line-height:1.5}
+.links .go{font-weight:700;font-size:1.3rem}
+
+/* form */
+.form-card{
+  background:#fff;border:2px solid var(--ink);border-radius:6px;
+  box-shadow:6px 6px 0 var(--turq);padding:24px 28px;max-width:720px;
+}
+.form-card .intro{color:var(--ink-sub);font-size:.95rem;margin-bottom:18px}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:700;font-size:.92rem;margin-bottom:4px}
+.req{color:var(--err);font-weight:700}
+.field input,.field textarea{
+  width:100%;font:inherit;padding:9px 12px;
+  border:2px solid var(--ink);border-radius:4px;background:var(--paper);color:var(--ink);
+}
+.field textarea{min-height:150px;resize:vertical}
+.field input:focus,.field textarea:focus{background:#fff;outline:3px solid var(--turq);outline-offset:0}
+.field-error{display:block;color:var(--err);font-size:.85rem;margin-top:3px}
+.btn{
+  font:inherit;font-weight:700;font-size:1rem;cursor:pointer;
+  padding:10px 30px;background:var(--turq);color:var(--ink);
+  border:2px solid var(--ink);border-radius:4px;box-shadow:3px 3px 0 var(--ink);
+}
+.btn:hover{background:#6df0e3}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.msg-ok,.msg-ng{padding:12px 16px;border:2px solid var(--ink);border-radius:4px;margin-bottom:16px;font-weight:500}
+.msg-ok{background:var(--turq)}
+.msg-ng{background:#fde8ec;border-color:var(--err);color:var(--err)}
+
+footer{margin-top:64px;background:var(--turq);border-top:3px solid var(--ink);text-align:center;padding:22px 20px;font-size:.88rem}
+footer ul{list-style:none;display:flex;gap:18px;justify-content:center;margin-bottom:8px;flex-wrap:wrap}
+footer .notice{max-width:760px;margin:0 auto 8px;font-size:.8rem;line-height:1.8}
+
+@media (max-width:760px){
+  .bar{justify-content:center}
+  .box dl{grid-template-columns:1fr}
+  .box dt{margin-top:6px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="index.html">情報ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="column.html">コラム</a></li>
+        <li><a href="about.html" aria-current="page">について</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="page-head">
+    <h1>について</h1>
+    <p>このサイトの紹介と、管理人のリンク、お問い合わせフォームです。</p>
+  </div>
+
+  <section aria-labelledby="h-site">
+    <h2 class="sec-title" id="h-site">このサイトについて</h2>
+    <div class="box">
+      <p>「情報ノート」は、情報の勉強の記録をまとめるサイトです。アルゴリズム、ネットワーク、セキュリティ、データの扱い方など、学んだことをノートのように残しています。</p>
+      <p>ブログでは勉強の進み具合を日付と日記で、コラムでは4コマ漫画やイラスト、小論文形式の軽い記事を載せています。</p>
+      <dl>
+        <dt>管理人</dt><dd>Azalea72</dd>
+        <dt>テーマ</dt><dd>情報（アルゴリズム・ネットワーク・セキュリティなど）</dd>
+        <dt>更新</dt><dd>勉強が進んだときに、ゆっくり更新します</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-links">
+    <h2 class="sec-title" id="h-links">リンク</h2>
+
+    <h3 class="group">漫画・イラスト掲載サイト</h3>
+    <ul class="links">
+      <li><a href="https://rookie.shonenjump.com/users/14728546961183734555" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">📚</span>
+        <span class="txt"><b>ジャンプルーキー</b><small>オリジナル漫画を掲載中</small></span>
+        <span class="go" aria-hidden="true">›</span></a></li>
+      <li><a href="https://www.pixiv.net/users/105728284" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">🎨</span>
+        <span class="txt"><b>Pixiv</b><small>二次創作はこちらに掲載</small></span>
+        <span class="go" aria-hidden="true">›</span></a></li>
+    </ul>
+
+    <h3 class="group">SNS・その他</h3>
+    <ul class="links">
+      <li><a href="https://bsky.app/profile/azaleaazalea88.bsky.social" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">🦋</span>
+        <span class="txt"><b>Bluesky</b><small>近況・作品のお知らせ</small></span>
+        <span class="go" aria-hidden="true">›</span></a></li>
+      <li><a href="https://www.youtube.com/@LilyPopins0512" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">🎬</span>
+        <span class="txt"><b>YouTube（リリポピ）</b><small>動画チャンネル</small></span>
+        <span class="go" aria-hidden="true">›</span></a></li>
+      <li><a href="https://lilipopi.github.io/lilypopins/" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">🌸</span>
+        <span class="txt"><b>リリポピのホームページ</b><small>別サイト</small></span>
+        <span class="go" aria-hidden="true">›</span></a></li>
+    </ul>
+
+    <h3 class="group">Azalea72のホームページ</h3>
+    <ul class="links">
+      <li><a href="https://azaleacreativeroom888.github.io/storyreviewazalea/" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">📖</span>
+        <span class="txt"><b>書評サイト</b><small>本・アニメ・映画・ゲーム・小説の備忘録</small></span>
+        <span class="go" aria-hidden="true">›</span></a></li>
+      <li><a href="https://azaleacreativeroom888.github.io/fan-english/" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">🍔</span>
+        <span class="txt"><b>英語サイト（English Site）</b><small>英語話者と英語学習者に向けたサイト</small></span>
+        <span class="go" aria-hidden="true">›</span></a></li>
+      <li><a href="https://azaleacreativeroom888.github.io/fan-watercolor/" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">☁️</span>
+        <span class="txt"><b>水彩画サイト</b><small>水彩画掲載</small></span>
+        <span class="go" aria-hidden="true">›</span></a></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-form">
+    <h2 class="sec-title" id="h-form">お問い合わせフォーム</h2>
+    <div class="form-card">
+      <p class="intro">ご質問・ご感想などはこちらからどうぞ。Gmailで受け取り、返信いたします。</p>
+
+      <div data-fs-success class="msg-ok" role="status" style="display:none;">メッセージを送信しました。ありがとうございます！</div>
+      <div data-fs-error class="msg-ng" role="alert" style="display:none;"></div>
+
+      <form id="contact-form" action="https://formspree.io/f/maqvpvoz" method="POST">
+        <div class="field">
+          <label for="name">お名前</label>
+          <input type="text" id="name" name="name" placeholder="お名前（ニックネームでもOK）" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="email">メールアドレス <span class="req">*</span></label>
+          <input type="email" id="email" name="email" data-fs-field placeholder="example@email.com" autocomplete="email" required>
+          <span data-fs-error="email" class="field-error"></span>
+        </div>
+        <div class="field">
+          <label for="message">メッセージ <span class="req">*</span></label>
+          <textarea id="message" name="message" data-fs-field placeholder="メッセージを入力してください" rows="6" required></textarea>
+          <span data-fs-error="message" class="field-error"></span>
+        </div>
+        <button class="btn" type="submit" data-fs-submit-btn>送信する</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <ul>
+    <li><a href="index.html">ホーム</a></li>
+    <li><a href="blog.html">ブログ</a></li>
+    <li><a href="column.html">コラム</a></li>
+    <li><a href="about.html">について</a></li>
+  </ul>
+  <p class="notice">当サイトに掲載されている画像・文章・作品について、AI学習への利用、トレース、無断転載、二次利用を禁止します。</p>
+  <small>&copy; 2026 情報ノート</small>
+</footer>
+
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'maqvpvoz' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+</body>
+</html>
